@@ -52,13 +52,28 @@ public class PessoaDaoArquivo {
 
     public Pessoa buscarPorCpf(String cpf) throws IOException, ClassNotFoundException {
         Set<Pessoa> pessoas = getPessoas();
-        
+
         for(Pessoa p : pessoas){
             if(p.getCpf().equals(cpf)){
                 return p;
             }
         }
         return null;
+    }
+
+    public boolean atualizar(Pessoa pessoa) throws IOException, ClassNotFoundException {
+        Set<Pessoa> pessoas = getPessoas();
+
+        for(Pessoa p : pessoas){
+            if(p.getCpf().equals(pessoa.getCpf())){
+                pessoas.remove(p);
+                pessoas.add(pessoa);
+                atualizarArquivo(pessoas);
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private void atualizarArquivo(Set<Pessoa> pessoas) throws IOException {

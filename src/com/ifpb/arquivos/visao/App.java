@@ -16,6 +16,8 @@ public class App {
         try {
             PessoaDaoArquivo dao = new PessoaDaoArquivo();
 
+//            System.out.println(dao.buscarPorCpf("111.111.111-99"));
+
 //            Pessoa p = new Pessoa("222.222.222-02","Maria", null);
 //            if(dao.deletar(p)){
 //                System.out.println("Removido com sucesso");
