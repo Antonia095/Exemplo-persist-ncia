@@ -15,6 +15,14 @@ public class App {
 
         try {
             PessoaDaoArquivo dao = new PessoaDaoArquivo();
+
+//            Pessoa p = new Pessoa("222.222.222-02","Maria", null);
+//            if(dao.deletar(p)){
+//                System.out.println("Removido com sucesso");
+//            }else{
+//                System.out.println("Falha ao deletar");
+//            }
+
 //            System.out.println(dao.salvar(new Pessoa("222.222.222-02",
 //                    "Maria",LocalDate.now())));
             System.out.println(dao.getPessoas());

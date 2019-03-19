@@ -40,6 +40,27 @@ public class PessoaDaoArquivo {
         }
     }
 
+    public boolean deletar(Pessoa pessoa) throws IOException, ClassNotFoundException {
+        Set<Pessoa> pessoas = getPessoas();
+        if(pessoas.remove(pessoa)){
+            atualizarArquivo(pessoas);
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public Pessoa buscarPorCpf(String cpf) throws IOException, ClassNotFoundException {
+        Set<Pessoa> pessoas = getPessoas();
+        
+        for(Pessoa p : pessoas){
+            if(p.getCpf().equals(cpf)){
+                return p;
+            }
+        }
+        return null;
+    }
+
     private void atualizarArquivo(Set<Pessoa> pessoas) throws IOException {
         try(ObjectOutputStream out = new ObjectOutputStream(
                 new FileOutputStream(arquivo)
