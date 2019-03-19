@@ -16,7 +16,15 @@ public class App {
         try {
             PessoaDaoArquivo dao = new PessoaDaoArquivo();
 
-//            System.out.println(dao.buscarPorCpf("111.111.111-99"));
+//            Pessoa p = new Pessoa("111.111.111-01","João das Neves",
+//                    LocalDate.now());
+//            if(dao.atualizar(p)){
+//                System.out.println("Atualizado");
+//            }else{
+//                System.out.println("Falha");
+//            }
+
+            System.out.println(dao.buscarPorCpf("111.111.111-01"));
 
 //            Pessoa p = new Pessoa("222.222.222-02","Maria", null);
 //            if(dao.deletar(p)){
@@ -27,7 +35,7 @@ public class App {
 
 //            System.out.println(dao.salvar(new Pessoa("222.222.222-02",
 //                    "Maria",LocalDate.now())));
-            System.out.println(dao.getPessoas());
+            //System.out.println(dao.getPessoas());
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

@@ -72,7 +72,6 @@ public class PessoaDaoArquivo {
                 return true;
             }
         }
-
         return false;
     }
 
