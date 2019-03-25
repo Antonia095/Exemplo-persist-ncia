@@ -2,6 +2,7 @@ package com.ifpb.arquivos.visao;
 
 import com.ifpb.arquivos.banco.ConFactory;
 import com.ifpb.arquivos.dao.PessoaDaoArquivo;
+import com.ifpb.arquivos.dao.PessoaDaoBanco;
 import com.ifpb.arquivos.modelo.Pessoa;
 
 import javax.swing.*;
@@ -15,6 +16,18 @@ import java.util.Date;
 public class App {
 
     public static void main(String[] args) {
+
+        Pessoa p = new Pessoa("111.111.111-99", "João das Neves", LocalDate.now());
+
+        PessoaDaoBanco dao = new PessoaDaoBanco();
+
+        try {
+            System.out.println(dao.atualizar(p));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
 //        ConFactory factory = new ConFactory();
 //        try {

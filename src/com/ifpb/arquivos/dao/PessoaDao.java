@@ -8,10 +8,10 @@ import java.util.Set;
 
 public interface PessoaDao {
 
-    Set<Pessoa> getPessoas() throws IOException, ClassNotFoundException;
+    Set<Pessoa> getPessoas() throws IOException, ClassNotFoundException, SQLException;
     boolean salvar(Pessoa pessoa) throws IOException, ClassNotFoundException, SQLException;
-    boolean deletar(Pessoa pessoa) throws IOException, ClassNotFoundException;
-    Pessoa buscarPorCpf(String cpf) throws IOException, ClassNotFoundException;
-    boolean atualizar(Pessoa pessoa) throws IOException, ClassNotFoundException;
+    boolean deletar(Pessoa pessoa) throws IOException, ClassNotFoundException, SQLException;
+    Pessoa buscarPorCpf(String cpf) throws IOException, ClassNotFoundException, SQLException;
+    boolean atualizar(Pessoa pessoa) throws IOException, ClassNotFoundException, SQLException;
 
 }
