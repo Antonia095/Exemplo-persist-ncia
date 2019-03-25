@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.HashSet;
 import java.util.Set;
 
-public class PessoaDaoArquivo {
+public class PessoaDaoArquivo implements PessoaDao{
 
     private File arquivo;
 
@@ -18,6 +18,7 @@ public class PessoaDaoArquivo {
         }
     }
 
+    @Override
     public Set<Pessoa> getPessoas() throws IOException, ClassNotFoundException {
         if(arquivo.length()>0){
             try(ObjectInputStream in = new ObjectInputStream(
@@ -30,6 +31,7 @@ public class PessoaDaoArquivo {
         }
     }
 
+    @Override
     public boolean salvar(Pessoa pessoa) throws IOException, ClassNotFoundException {
         Set<Pessoa> pessoas = getPessoas();
         if(pessoas.add(pessoa)){
@@ -40,6 +42,7 @@ public class PessoaDaoArquivo {
         }
     }
 
+    @Override
     public boolean deletar(Pessoa pessoa) throws IOException, ClassNotFoundException {
         Set<Pessoa> pessoas = getPessoas();
         if(pessoas.remove(pessoa)){
@@ -50,6 +53,7 @@ public class PessoaDaoArquivo {
         }
     }
 
+    @Override
     public Pessoa buscarPorCpf(String cpf) throws IOException, ClassNotFoundException {
         Set<Pessoa> pessoas = getPessoas();
 
@@ -61,6 +65,7 @@ public class PessoaDaoArquivo {
         return null;
     }
 
+    @Override
     public boolean atualizar(Pessoa pessoa) throws IOException, ClassNotFoundException {
         Set<Pessoa> pessoas = getPessoas();
 
